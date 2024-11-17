@@ -15,6 +15,7 @@ public class Product {
     private Integer productId;
     private String name;
     private String description;
-    private Double price;
     private String availableQuantity;
+    private Double purchaseRate;
+    private Double sellingRate;
 }

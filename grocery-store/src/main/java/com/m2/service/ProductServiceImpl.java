@@ -26,7 +26,7 @@ public class ProductServiceImpl implements ProductService{
     private ProductDTO convertEntity(Product product) {
         return ProductDTO.builder()
                 .productId(product.getProductId())
-                .price(product.getPrice())
+                .sellingRate(product.getSellingRate())
                 .availableQuantity(product.getAvailableQuantity())
                 .description(product.getDescription())
                 .name(product.getName())
@@ -49,7 +49,8 @@ public class ProductServiceImpl implements ProductService{
                 .availableQuantity(dto.getAvailableQuantity())
                 .name(dto.getName())
                 .description(dto.getDescription())
-                .price(dto.getPrice())
+                .sellingRate(dto.getSellingRate())
+                .purchaseRate(dto.getPurchaseRate())
                 .build();
     }
 
@@ -81,8 +82,10 @@ public class ProductServiceImpl implements ProductService{
             product.setName(dto.getName());
         if (Objects.nonNull(dto.getDescription()))
             product.setDescription(dto.getDescription());
-        if (Objects.nonNull(dto.getPrice()))
-            product.setPrice(dto.getPrice());
+        if (Objects.nonNull(dto.getPurchaseRate()))
+            product.setPurchaseRate(dto.getPurchaseRate());
+        if (Objects.nonNull(dto.getSellingRate()))
+            product.setSellingRate(dto.getSellingRate());
         if (Objects.nonNull(dto.getAvailableQuantity()))
             product.setAvailableQuantity(dto.getAvailableQuantity());
 

@@ -9,7 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class SelectedProduct {
+public class SelectedProduct extends BaseEntity{
     @Id
     @GeneratedValue
     private Integer productId;
